@@ -1,0 +1,120 @@
+# Publishes synthesia-ai to PyPI when a v* tag is pushed, with trusted publishing and attestations.
+# Ours, not Fern's: kept through .fernignore. Nothing else in this repo publishes, and no PyPI token exists.
+# - Runs only in the synthesia-ai repo; in a fork or any other copy, every job is skipped.
+# - `build` has no id-token. It checks the tagged commit is on main and matches pyproject.toml's version, builds the
+#   wheel and sdist, and uploads them. `publish` runs in the `release` environment (reviewers, prevent self-review,
+#   v* tags only), checks the commit is on main again, and publishes only those files. It's the only job that can get
+#   a PyPI token, through the trusted publisher pinned to this repo, release.yml and `release`.
+# - GitHub-hosted runners only, Harden-Runner blocking all other egress, actions pinned by SHA, no caches, and no
+#   ${{ }} expression inside a run: script.
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    if: github.repository_owner == 'synthesia-ai'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: step-security/harden-runner@dc2769abcc0fcfbadfc1df54081c1608579ef6b2 # v2.22.2
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            api.github.com:443
+            pypi.org:443
+            files.pythonhosted.org:443
+            results-receiver.actions.githubusercontent.com:443
+            *.blob.core.windows.net:443
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          persist-credentials: false
+
+      - name: Require the tagged commit to be on main
+        # Through the API, as checkout keeps no credentials and the first release runs while the repo is private.
+        # "identical" or "behind" means the commit is in main's history.
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          status=$(gh api "repos/$GITHUB_REPOSITORY/compare/main...$GITHUB_SHA" --jq .status)
+          if [ "$status" != identical ] && [ "$status" != behind ]; then
+            echo "::error::$GITHUB_REF_NAME ($GITHUB_SHA) is not on main; refusing to release an unmerged commit"
+            exit 1
+          fi
+
+      - name: Require the tag to match pyproject.toml's version
+        run: |
+          version=$(python3 -c 'import tomllib; print(tomllib.load(open("pyproject.toml", "rb"))["tool"]["poetry"]["version"])')
+          if [ "$GITHUB_REF_NAME" != "v$version" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME doesn't match pyproject.toml's version $version"
+            exit 1
+          fi
+
+      - name: Build
+        # Same Poetry as ci.yml. `poetry build` needs no dependencies installed.
+        run: |
+          pipx install poetry==2.4.1
+          poetry build
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    if: github.repository_owner == 'synthesia-ai'
+    runs-on: ubuntu-24.04
+    environment: release
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write  # PyPI trusted publishing and attestations
+    steps:
+      - uses: step-security/harden-runner@dc2769abcc0fcfbadfc1df54081c1608579ef6b2 # v2.22.2
+        with:
+          egress-policy: block
+          # ghcr.io and pkg-containers: the publish action runs as its own image, pulled by this pinned commit.
+          allowed-endpoints: >
+            github.com:443
+            api.github.com:443
+            ghcr.io:443
+            pkg-containers.githubusercontent.com:443
+            *.actions.githubusercontent.com:443
+            *.blob.core.windows.net:443
+            pypi.org:443
+            upload.pypi.org:443
+            fulcio.sigstore.dev:443
+            rekor.sigstore.dev:443
+            tuf-repo-cdn.sigstore.dev:443
+
+      - name: Require the tagged commit to be on main
+        # Again here, as this job holds id-token. "identical" or "behind" means the commit is in main's history.
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          status=$(gh api "repos/$GITHUB_REPOSITORY/compare/main...$GITHUB_SHA" --jq .status)
+          if [ "$status" != identical ] && [ "$status" != behind ]; then
+            echo "::error::$GITHUB_REF_NAME ($GITHUB_SHA) is not on main; refusing to publish"
+            exit 1
+          fi
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: dist
+          path: dist/
+
+      - uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086 # v1.14.3
+        with:
+          packages-dir: dist/
+          attestations: true
