@@ -1,0 +1,131 @@
+# Ours, not Fern's: kept through .fernignore. Fern's template uses Poetry 1.5.1 (the generator
+# locks with 2.4.1), unpinned actions and a publish job with stored PyPI secrets.
+# Publishing has its own trusted-publishing workflow (release.yml); this one only builds and tests.
+# - GitHub-hosted runners with Harden-Runner, like release.yml.
+# - Harden-Runner blocks all egress not in each job's allowed-endpoints.
+# - The secrets job fails on a secret or an internal reference; .pre-commit-config.yaml has the same checks as
+#   optional local hooks.
+# - Python is the runner's own python3 (3.12 on ubuntu-24.04), so no setup-python action is needed.
+name: ci
+on: [push]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  compile:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: step-security/harden-runner@dc2769abcc0fcfbadfc1df54081c1608579ef6b2 # v2.22.2
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            api.github.com:443
+            pypi.org:443
+            files.pythonhosted.org:443
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          persist-credentials: false
+      - name: Install Poetry
+        run: pipx install poetry==2.4.1
+      - name: Install dependencies
+        run: poetry install
+      - name: Compile
+        run: poetry run mypy .
+
+  test:
+    runs-on: ubuntu-24.04
+    # The wire tests' WireMock. tests/conftest.py starts it with `docker compose` unless WIREMOCK_URL is set; as a
+    # service it's pulled before Harden-Runner starts, and we load its mappings below.
+    services:
+      wiremock:
+        # Same version as wiremock/docker-compose.test.yml, pinned by digest.
+        image: wiremock/wiremock:3.9.1@sha256:8fe02bc3f9b63deb1454d41750dbaf081adf4b3e8c74fd8e31f790bee5647b88
+        ports:
+          - 8080:8080
+        options: >-
+          --health-cmd "curl -f http://localhost:8080/__admin/health"
+          --health-interval 2s --health-timeout 5s --health-retries 15
+    env:
+      WIREMOCK_URL: http://localhost:8080
+    timeout-minutes: 15
+    steps:
+      - uses: step-security/harden-runner@dc2769abcc0fcfbadfc1df54081c1608579ef6b2 # v2.22.2
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            api.github.com:443
+            pypi.org:443
+            files.pythonhosted.org:443
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          persist-credentials: false
+      - name: Load WireMock mappings
+        run: |
+          python3 -c 'import sys, urllib.request
+          body = open("wiremock/wiremock-mappings.json", "rb").read()
+          req = urllib.request.Request(sys.argv[1] + "/__admin/mappings/import", data=body, method="POST",
+                                       headers={"Content-Type": "application/json"})
+          urllib.request.urlopen(req)' "$WIREMOCK_URL"
+      - name: Install Poetry
+        run: pipx install poetry==2.4.1
+      - name: Install dependencies
+        run: poetry install
+      - name: Test
+        run: poetry run pytest -rP -n auto .
+      - name: Install aiohttp extra
+        run: poetry install --extras aiohttp
+      - name: Test (aiohttp)
+        run: poetry run pytest -rP -n auto -m aiohttp .
+
+  # Secrets (gitleaks, on the tree and every commit) and internal references (.github/check_internal_refs.py).
+  # Both print where a match is, never what it is: these logs are public once the repository is.
+  secrets:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: step-security/harden-runner@dc2769abcc0fcfbadfc1df54081c1608579ef6b2 # v2.22.2
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            api.github.com:443
+            objects.githubusercontent.com:443
+            release-assets.githubusercontent.com:443
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          fetch-depth: 0  # gitleaks git scans every commit in HEAD's history
+          persist-credentials: false
+      # The release binary, checked against its sha256 (the same value as the release's checksums.txt and GitHub's
+      # asset digest). Not gitleaks-action: it needs a paid licence for organisations.
+      - name: Install gitleaks
+        env:
+          GITLEAKS_VERSION: 8.30.1
+          GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+        run: |
+          cd "$RUNNER_TEMP"
+          curl -sSfL -o gitleaks.tar.gz \
+            "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          echo "${GITLEAKS_SHA256}  gitleaks.tar.gz" | sha256sum --check --strict
+          tar -xzf gitleaks.tar.gz gitleaks
+      # Both read .gitleaks.toml. --redact keeps matched values out of the log. Each check runs even if an earlier
+      # one failed, so one run reports everything.
+      - name: Scan the tree for secrets
+        run: $RUNNER_TEMP/gitleaks dir . --redact --no-banner --verbose
+      - name: Scan the history for secrets
+        if: '!cancelled()'
+        # HEAD's history only; by default gitleaks scans every fetched branch, not just the one being checked.
+        run: $RUNNER_TEMP/gitleaks git . --log-opts=HEAD --redact --no-banner --verbose
+      - name: Check for internal references
+        if: '!cancelled()'
+        run: python3 .github/check_internal_refs.py

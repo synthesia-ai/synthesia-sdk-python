@@ -1,0 +1,3301 @@
+{
+  "mappings": [
+    {
+      "id": "6fc00238-8f72-4e3a-b891-55d22b4195d2",
+      "name": "Get the credit balance - default",
+      "request": {
+        "urlPathTemplate": "/api/billing/credits",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"period\": {\n    \"startsAt\": \"2024-01-15T09:30:00Z\",\n    \"endsAt\": \"2024-01-15T09:30:00Z\"\n  },\n  \"credits\": {\n    \"unit\": \"unit\",\n    \"total\": \"1000.00\",\n    \"consumed\": \"250.50\",\n    \"available\": \"749.50\"\n  }\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "6fc00238-8f72-4e3a-b891-55d22b4195d2",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "e0499200-db01-4b3f-ac5e-e1ca68d38b5f",
+      "name": "Get the credit balance - default - billing.get_credits.0",
+      "request": {
+        "urlPathTemplate": "/api/billing/credits",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "billing.get_credits.0"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"period\": {\n    \"startsAt\": \"2024-01-15T09:30:00Z\",\n    \"endsAt\": \"2024-01-15T09:30:00Z\"\n  },\n  \"credits\": {\n    \"unit\": \"unit\",\n    \"total\": \"1000.00\",\n    \"consumed\": \"250.50\",\n    \"available\": \"749.50\"\n  }\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "e0499200-db01-4b3f-ac5e-e1ca68d38b5f",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "efd60f70-85d1-4fb6-beac-736638412d1d",
+      "name": "Get the credit balance - default - billing.get_credits.1",
+      "request": {
+        "urlPathTemplate": "/api/billing/credits",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "billing.get_credits.1"
+          }
+        }
+      },
+      "response": {
+        "status": 400,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "efd60f70-85d1-4fb6-beac-736638412d1d",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "6228be81-8dc2-4605-833e-173574f84c5c",
+      "name": "Get the credit balance - default - billing.get_credits.2",
+      "request": {
+        "urlPathTemplate": "/api/billing/credits",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "billing.get_credits.2"
+          }
+        }
+      },
+      "response": {
+        "status": 401,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "6228be81-8dc2-4605-833e-173574f84c5c",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "9b2dc1d4-b737-4a18-a32c-b45a2f593e7e",
+      "name": "Get the credit balance - default - billing.get_credits.3",
+      "request": {
+        "urlPathTemplate": "/api/billing/credits",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "billing.get_credits.3"
+          }
+        }
+      },
+      "response": {
+        "status": 402,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "9b2dc1d4-b737-4a18-a32c-b45a2f593e7e",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "23be999b-e3bd-4892-819d-097beb6d1451",
+      "name": "Get the credit balance - default - billing.get_credits.4",
+      "request": {
+        "urlPathTemplate": "/api/billing/credits",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "billing.get_credits.4"
+          }
+        }
+      },
+      "response": {
+        "status": 403,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "23be999b-e3bd-4892-819d-097beb6d1451",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "7e6b2c90-1f3e-4f3a-9a49-321e77ef387d",
+      "name": "Get the credit balance - default - billing.get_credits.5",
+      "request": {
+        "urlPathTemplate": "/api/billing/credits",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "billing.get_credits.5"
+          }
+        }
+      },
+      "response": {
+        "status": 404,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "7e6b2c90-1f3e-4f3a-9a49-321e77ef387d",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "371abec5-93b6-40ee-af0f-8f324b351e28",
+      "name": "Get the credit balance - default - billing.get_credits.6",
+      "request": {
+        "urlPathTemplate": "/api/billing/credits",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "billing.get_credits.6"
+          }
+        }
+      },
+      "response": {
+        "status": 429,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "371abec5-93b6-40ee-af0f-8f324b351e28",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "bfc33c27-1896-4f7b-aef7-b46c6dfc9712",
+      "name": "Get the credit balance - default - billing.get_credits.7",
+      "request": {
+        "urlPathTemplate": "/api/billing/credits",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "billing.get_credits.7"
+          }
+        }
+      },
+      "response": {
+        "status": 500,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "bfc33c27-1896-4f7b-aef7-b46c6dfc9712",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "e423b8cc-bd5d-4a2b-8dd8-5355ca4f436b",
+      "name": "Get the credit balance - default - billing.get_credits.8",
+      "request": {
+        "urlPathTemplate": "/api/billing/credits",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "billing.get_credits.8"
+          }
+        }
+      },
+      "response": {
+        "status": 503,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "e423b8cc-bd5d-4a2b-8dd8-5355ca4f436b",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "6264cf63-7d81-4ca4-b005-a1ab45ebd2bc",
+      "name": "Get the credit balance - default - billing.get_credits.9",
+      "request": {
+        "urlPathTemplate": "/api/billing/credits",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "billing.get_credits.9"
+          }
+        }
+      },
+      "response": {
+        "status": 504,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "6264cf63-7d81-4ca4-b005-a1ab45ebd2bc",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "b0cacdcf-86c5-43d0-a3e7-ffafb71c3a0f",
+      "name": "List localization languages - default",
+      "request": {
+        "urlPathTemplate": "/api/localizations/languages",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"data\": [\n    {\n      \"language\": \"es-ES\",\n      \"name\": \"Spanish (Spain)\",\n      \"supports\": [\n        \"dubbing_source\",\n        \"dubbing_target\"\n      ]\n    }\n  ],\n  \"nextCursor\": \"nextCursor\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "b0cacdcf-86c5-43d0-a3e7-ffafb71c3a0f",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "f7e458ea-2dfb-46de-a23a-dcd2daf30a21",
+      "name": "List localization languages - default - localizations.list_languages.0",
+      "request": {
+        "urlPathTemplate": "/api/localizations/languages",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.list_languages.0"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"data\": [\n    {\n      \"language\": \"es-ES\",\n      \"name\": \"Spanish (Spain)\",\n      \"supports\": [\n        \"dubbing_source\",\n        \"dubbing_target\"\n      ]\n    }\n  ],\n  \"nextCursor\": \"nextCursor\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "f7e458ea-2dfb-46de-a23a-dcd2daf30a21",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "6dc90c67-077e-4dab-a921-20cf64ba5273",
+      "name": "List localization languages - default - localizations.list_languages.1",
+      "request": {
+        "urlPathTemplate": "/api/localizations/languages",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.list_languages.1"
+          }
+        }
+      },
+      "response": {
+        "status": 400,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "6dc90c67-077e-4dab-a921-20cf64ba5273",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "7b176ee7-f2a9-4c8c-933b-76031dd6ba5d",
+      "name": "List localization languages - default - localizations.list_languages.2",
+      "request": {
+        "urlPathTemplate": "/api/localizations/languages",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.list_languages.2"
+          }
+        }
+      },
+      "response": {
+        "status": 401,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "7b176ee7-f2a9-4c8c-933b-76031dd6ba5d",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "4d4b203d-bfd1-41f4-b982-5d6236d86dfc",
+      "name": "List localization languages - default - localizations.list_languages.3",
+      "request": {
+        "urlPathTemplate": "/api/localizations/languages",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.list_languages.3"
+          }
+        }
+      },
+      "response": {
+        "status": 403,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "4d4b203d-bfd1-41f4-b982-5d6236d86dfc",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "51232a75-fa82-4f63-8646-9145dc7b15b2",
+      "name": "List localization languages - default - localizations.list_languages.4",
+      "request": {
+        "urlPathTemplate": "/api/localizations/languages",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.list_languages.4"
+          }
+        }
+      },
+      "response": {
+        "status": 429,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "51232a75-fa82-4f63-8646-9145dc7b15b2",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "d69f47bd-455f-4e92-be2b-cf9a7272a6e3",
+      "name": "List localization languages - default - localizations.list_languages.5",
+      "request": {
+        "urlPathTemplate": "/api/localizations/languages",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.list_languages.5"
+          }
+        }
+      },
+      "response": {
+        "status": 500,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "d69f47bd-455f-4e92-be2b-cf9a7272a6e3",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "2d11317f-0e2b-4e86-904b-3c7fca5342b3",
+      "name": "List localization languages - default - localizations.list_languages.6",
+      "request": {
+        "urlPathTemplate": "/api/localizations/languages",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.list_languages.6"
+          }
+        }
+      },
+      "response": {
+        "status": 503,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "2d11317f-0e2b-4e86-904b-3c7fca5342b3",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "96d09861-a910-43cc-85d6-664488004daa",
+      "name": "List localization languages - default - localizations.list_languages.7",
+      "request": {
+        "urlPathTemplate": "/api/localizations/languages",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.list_languages.7"
+          }
+        }
+      },
+      "response": {
+        "status": 504,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "96d09861-a910-43cc-85d6-664488004daa",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "ec172c2e-2a36-483a-9be2-afb0569ca093",
+      "name": "Get a localization - default",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"status\": \"queued\",\n  \"error\": {\n    \"type\": \"type\",\n    \"title\": \"title\",\n    \"status\": 1,\n    \"code\": \"code\",\n    \"detail\": \"detail\",\n    \"features\": [\n      \"features\"\n    ],\n    \"instance\": \"instance\",\n    \"requestId\": \"requestId\"\n  },\n  \"createdAt\": \"2024-01-15T09:30:00Z\",\n  \"done\": true\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "ec172c2e-2a36-483a-9be2-afb0569ca093",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "f5c6c258-826d-4cf9-a770-ebb9d0d54fe2",
+      "name": "Get a localization - default - localizations.get.0",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.get.0"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"status\": \"queued\",\n  \"error\": {\n    \"type\": \"type\",\n    \"title\": \"title\",\n    \"status\": 1,\n    \"code\": \"code\",\n    \"detail\": \"detail\",\n    \"features\": [\n      \"features\"\n    ],\n    \"instance\": \"instance\",\n    \"requestId\": \"requestId\"\n  },\n  \"createdAt\": \"2024-01-15T09:30:00Z\",\n  \"done\": true\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "f5c6c258-826d-4cf9-a770-ebb9d0d54fe2",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "e2beb1e6-a1ef-4486-aed4-7fd1c0788eb1",
+      "name": "Get a localization - default - localizations.get.1",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.get.1"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 400,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "e2beb1e6-a1ef-4486-aed4-7fd1c0788eb1",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "54caa0f5-b32e-4496-ac04-a3e33f80bee1",
+      "name": "Get a localization - default - localizations.get.2",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.get.2"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 401,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "54caa0f5-b32e-4496-ac04-a3e33f80bee1",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "d69710a0-17e8-43d4-9ae9-5bf9ca33848b",
+      "name": "Get a localization - default - localizations.get.3",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.get.3"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 403,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "d69710a0-17e8-43d4-9ae9-5bf9ca33848b",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "571920a0-fced-41be-8a5e-bd0436d84c8a",
+      "name": "Get a localization - default - localizations.get.4",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.get.4"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 404,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "571920a0-fced-41be-8a5e-bd0436d84c8a",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "1ff22c05-03ec-4189-b262-5a2d0c830d15",
+      "name": "Get a localization - default - localizations.get.5",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.get.5"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 429,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "1ff22c05-03ec-4189-b262-5a2d0c830d15",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "d90a9d75-6f4f-4239-914c-df6ae9d5f3c2",
+      "name": "Get a localization - default - localizations.get.6",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.get.6"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 500,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "d90a9d75-6f4f-4239-914c-df6ae9d5f3c2",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "2bd3ac58-0d86-47df-9ec1-31405af54f1e",
+      "name": "Get a localization - default - localizations.get.7",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.get.7"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 503,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "2bd3ac58-0d86-47df-9ec1-31405af54f1e",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "145d70d6-4687-4e3c-afac-fb4acb111327",
+      "name": "Get a localization - default - localizations.get.8",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.get.8"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 504,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "145d70d6-4687-4e3c-afac-fb4acb111327",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "da6318b2-a158-4f17-a5c8-4e6915058e0b",
+      "name": "Create a localization from a media URL - Create a localization from a media URL",
+      "request": {
+        "urlPathTemplate": "/api/localizations/from-media-url",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 202,
+        "body": "{\n  \"id\": \"id\",\n  \"status\": \"queued\",\n  \"error\": {\n    \"type\": \"type\",\n    \"title\": \"title\",\n    \"status\": 1,\n    \"code\": \"code\",\n    \"detail\": \"detail\",\n    \"features\": [\n      \"features\"\n    ],\n    \"instance\": \"instance\",\n    \"requestId\": \"requestId\"\n  },\n  \"createdAt\": \"2024-01-15T09:30:00Z\",\n  \"done\": true\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "da6318b2-a158-4f17-a5c8-4e6915058e0b",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "0e070dc6-174d-4f96-ac64-74b0a0fd2f4f",
+      "name": "Create a localization from a media URL - Create a localization from a media URL - localizations.create_from_media_url.0",
+      "request": {
+        "urlPathTemplate": "/api/localizations/from-media-url",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.create_from_media_url.0"
+          }
+        }
+      },
+      "response": {
+        "status": 202,
+        "body": "{\n  \"id\": \"id\",\n  \"status\": \"queued\",\n  \"error\": {\n    \"type\": \"type\",\n    \"title\": \"title\",\n    \"status\": 1,\n    \"code\": \"code\",\n    \"detail\": \"detail\",\n    \"features\": [\n      \"features\"\n    ],\n    \"instance\": \"instance\",\n    \"requestId\": \"requestId\"\n  },\n  \"createdAt\": \"2024-01-15T09:30:00Z\",\n  \"done\": true\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "0e070dc6-174d-4f96-ac64-74b0a0fd2f4f",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "425ba200-a5dd-4a15-9d0f-42346e940993",
+      "name": "Create a localization from a media URL - default - localizations.create_from_media_url.1",
+      "request": {
+        "urlPathTemplate": "/api/localizations/from-media-url",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.create_from_media_url.1"
+          }
+        }
+      },
+      "response": {
+        "status": 400,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "425ba200-a5dd-4a15-9d0f-42346e940993",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "7e23196c-23d9-4e6a-9b68-45baff3c3cc1",
+      "name": "Create a localization from a media URL - default - localizations.create_from_media_url.2",
+      "request": {
+        "urlPathTemplate": "/api/localizations/from-media-url",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.create_from_media_url.2"
+          }
+        }
+      },
+      "response": {
+        "status": 401,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "7e23196c-23d9-4e6a-9b68-45baff3c3cc1",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "39ed0bb8-dc2b-42b9-ab40-202087d10a0d",
+      "name": "Create a localization from a media URL - default - localizations.create_from_media_url.3",
+      "request": {
+        "urlPathTemplate": "/api/localizations/from-media-url",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.create_from_media_url.3"
+          }
+        }
+      },
+      "response": {
+        "status": 403,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "39ed0bb8-dc2b-42b9-ab40-202087d10a0d",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "c1e4c595-9f8d-4560-a431-5735e00fdace",
+      "name": "Create a localization from a media URL - default - localizations.create_from_media_url.4",
+      "request": {
+        "urlPathTemplate": "/api/localizations/from-media-url",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.create_from_media_url.4"
+          }
+        }
+      },
+      "response": {
+        "status": 413,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "c1e4c595-9f8d-4560-a431-5735e00fdace",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "65beb0ed-56d2-469d-b571-7a10cb7f9a8e",
+      "name": "Create a localization from a media URL - default - localizations.create_from_media_url.5",
+      "request": {
+        "urlPathTemplate": "/api/localizations/from-media-url",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.create_from_media_url.5"
+          }
+        }
+      },
+      "response": {
+        "status": 415,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "65beb0ed-56d2-469d-b571-7a10cb7f9a8e",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "741286c0-49f3-4f76-9bd1-0c94576955c9",
+      "name": "Create a localization from a media URL - default - localizations.create_from_media_url.6",
+      "request": {
+        "urlPathTemplate": "/api/localizations/from-media-url",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.create_from_media_url.6"
+          }
+        }
+      },
+      "response": {
+        "status": 429,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "741286c0-49f3-4f76-9bd1-0c94576955c9",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "bdbeb7a1-49d1-4162-aaea-c7a2381cbc18",
+      "name": "Create a localization from a media URL - default - localizations.create_from_media_url.7",
+      "request": {
+        "urlPathTemplate": "/api/localizations/from-media-url",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.create_from_media_url.7"
+          }
+        }
+      },
+      "response": {
+        "status": 500,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "bdbeb7a1-49d1-4162-aaea-c7a2381cbc18",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "22670d23-a11b-4ef9-a960-ef770ec03fcc",
+      "name": "Create a localization from a media URL - default - localizations.create_from_media_url.8",
+      "request": {
+        "urlPathTemplate": "/api/localizations/from-media-url",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.create_from_media_url.8"
+          }
+        }
+      },
+      "response": {
+        "status": 503,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "22670d23-a11b-4ef9-a960-ef770ec03fcc",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "d107a58e-d120-44bd-a64d-5c5ebc989599",
+      "name": "Create a localization from a media URL - default - localizations.create_from_media_url.9",
+      "request": {
+        "urlPathTemplate": "/api/localizations/from-media-url",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.create_from_media_url.9"
+          }
+        }
+      },
+      "response": {
+        "status": 504,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "d107a58e-d120-44bd-a64d-5c5ebc989599",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "ffdcea40-9049-47a8-81a2-2d231e7e3870",
+      "name": "Start an interactive avatar session - Start an interactive avatar session",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/sessions",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 201,
+        "body": "{\n  \"id\": \"ses_6f2a91c04b8d4e37\",\n  \"status\": \"status\",\n  \"createdAt\": \"2026-09-10T09:30:00Z\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "ffdcea40-9049-47a8-81a2-2d231e7e3870",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "f035d363-0f94-4d9a-83eb-f39693d05719",
+      "name": "Start an interactive avatar session - Start an interactive avatar session - interactive_avatars.sessions.create.0",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/sessions",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.sessions.create.0"
+          }
+        }
+      },
+      "response": {
+        "status": 201,
+        "body": "{\n  \"id\": \"ses_6f2a91c04b8d4e37\",\n  \"status\": \"status\",\n  \"createdAt\": \"2026-09-10T09:30:00Z\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "f035d363-0f94-4d9a-83eb-f39693d05719",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "a4c79590-2f88-4fd2-b449-c16a387459f7",
+      "name": "Start an interactive avatar session - default - interactive_avatars.sessions.create.1",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/sessions",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.sessions.create.1"
+          }
+        }
+      },
+      "response": {
+        "status": 400,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "a4c79590-2f88-4fd2-b449-c16a387459f7",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "e42d8e89-87e6-4e55-85c7-b2ce5822025f",
+      "name": "Start an interactive avatar session - default - interactive_avatars.sessions.create.2",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/sessions",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.sessions.create.2"
+          }
+        }
+      },
+      "response": {
+        "status": 401,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "e42d8e89-87e6-4e55-85c7-b2ce5822025f",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "79eaadb8-30af-46a2-b27b-80a1ce7b6424",
+      "name": "Start an interactive avatar session - default - interactive_avatars.sessions.create.3",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/sessions",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.sessions.create.3"
+          }
+        }
+      },
+      "response": {
+        "status": 402,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "79eaadb8-30af-46a2-b27b-80a1ce7b6424",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "853425e0-1dfd-413e-820f-0b9fb38d06f1",
+      "name": "Start an interactive avatar session - default - interactive_avatars.sessions.create.4",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/sessions",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.sessions.create.4"
+          }
+        }
+      },
+      "response": {
+        "status": 403,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "853425e0-1dfd-413e-820f-0b9fb38d06f1",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "7d27d88c-3ab1-4cf1-8b37-eacbdb3665ce",
+      "name": "Start an interactive avatar session - default - interactive_avatars.sessions.create.5",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/sessions",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.sessions.create.5"
+          }
+        }
+      },
+      "response": {
+        "status": 404,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "7d27d88c-3ab1-4cf1-8b37-eacbdb3665ce",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "bf3bd80b-a6b5-4411-969a-93fb437f869a",
+      "name": "Start an interactive avatar session - default - interactive_avatars.sessions.create.6",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/sessions",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.sessions.create.6"
+          }
+        }
+      },
+      "response": {
+        "status": 409,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "bf3bd80b-a6b5-4411-969a-93fb437f869a",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "c9f9a73c-4275-46db-8e84-29564543c556",
+      "name": "Start an interactive avatar session - default - interactive_avatars.sessions.create.7",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/sessions",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.sessions.create.7"
+          }
+        }
+      },
+      "response": {
+        "status": 413,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "c9f9a73c-4275-46db-8e84-29564543c556",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "d8b45f7a-d43f-4ccf-84b8-34e400ee705d",
+      "name": "Start an interactive avatar session - default - interactive_avatars.sessions.create.8",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/sessions",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.sessions.create.8"
+          }
+        }
+      },
+      "response": {
+        "status": 415,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "d8b45f7a-d43f-4ccf-84b8-34e400ee705d",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "bc700ced-a9c2-43fd-b758-5df204ea2d13",
+      "name": "Start an interactive avatar session - default - interactive_avatars.sessions.create.9",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/sessions",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.sessions.create.9"
+          }
+        }
+      },
+      "response": {
+        "status": 429,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "bc700ced-a9c2-43fd-b758-5df204ea2d13",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "d5fdf3f4-b0bf-4fd7-b522-ac48300fbde0",
+      "name": "Start an interactive avatar session - default - interactive_avatars.sessions.create.10",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/sessions",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.sessions.create.10"
+          }
+        }
+      },
+      "response": {
+        "status": 500,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "d5fdf3f4-b0bf-4fd7-b522-ac48300fbde0",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "1bb3e709-021c-40df-82d5-e8824baaacf9",
+      "name": "Start an interactive avatar session - default - interactive_avatars.sessions.create.11",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/sessions",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.sessions.create.11"
+          }
+        }
+      },
+      "response": {
+        "status": 503,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "1bb3e709-021c-40df-82d5-e8824baaacf9",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "27994216-3559-4814-9c6a-a6ed0bbc2de6",
+      "name": "Start an interactive avatar session - default - interactive_avatars.sessions.create.12",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/sessions",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.sessions.create.12"
+          }
+        }
+      },
+      "response": {
+        "status": 504,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "27994216-3559-4814-9c6a-a6ed0bbc2de6",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "5166af43-be55-4bf0-9792-17e10dda0f99",
+      "name": "Create an interactive avatar - Create an interactive avatar",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/avatars",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 202,
+        "body": "{\n  \"id\": \"av_6c9edb85a2f947e5\",\n  \"status\": \"queued\",\n  \"done\": true\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "5166af43-be55-4bf0-9792-17e10dda0f99",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "9422109e-aa86-433d-bcb6-e0effcb62720",
+      "name": "Create an interactive avatar - Create an interactive avatar - interactive_avatars.avatars.create.0",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/avatars",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.avatars.create.0"
+          }
+        }
+      },
+      "response": {
+        "status": 202,
+        "body": "{\n  \"id\": \"av_6c9edb85a2f947e5\",\n  \"status\": \"queued\",\n  \"done\": true\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "9422109e-aa86-433d-bcb6-e0effcb62720",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "91db8545-7bff-4357-8e50-45793341e359",
+      "name": "Create an interactive avatar - default - interactive_avatars.avatars.create.1",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/avatars",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.avatars.create.1"
+          }
+        }
+      },
+      "response": {
+        "status": 400,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "91db8545-7bff-4357-8e50-45793341e359",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "78b89782-3eae-40b4-8946-92368ee5323e",
+      "name": "Create an interactive avatar - default - interactive_avatars.avatars.create.2",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/avatars",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.avatars.create.2"
+          }
+        }
+      },
+      "response": {
+        "status": 401,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "78b89782-3eae-40b4-8946-92368ee5323e",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "93bc493e-047b-4295-b93a-9c43c287ae94",
+      "name": "Create an interactive avatar - default - interactive_avatars.avatars.create.3",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/avatars",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.avatars.create.3"
+          }
+        }
+      },
+      "response": {
+        "status": 402,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "93bc493e-047b-4295-b93a-9c43c287ae94",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "9c150b38-d1d4-488e-837b-3ed6df7d7ccc",
+      "name": "Create an interactive avatar - default - interactive_avatars.avatars.create.4",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/avatars",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.avatars.create.4"
+          }
+        }
+      },
+      "response": {
+        "status": 403,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "9c150b38-d1d4-488e-837b-3ed6df7d7ccc",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "fa8e5426-ec07-4821-975d-4bacc31b9909",
+      "name": "Create an interactive avatar - default - interactive_avatars.avatars.create.5",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/avatars",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.avatars.create.5"
+          }
+        }
+      },
+      "response": {
+        "status": 404,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "fa8e5426-ec07-4821-975d-4bacc31b9909",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "edbfb297-86b1-4c0a-869d-58a0b8585241",
+      "name": "Create an interactive avatar - default - interactive_avatars.avatars.create.6",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/avatars",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.avatars.create.6"
+          }
+        }
+      },
+      "response": {
+        "status": 413,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "edbfb297-86b1-4c0a-869d-58a0b8585241",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "1b94b84e-3270-4050-812e-c669fb4512ca",
+      "name": "Create an interactive avatar - default - interactive_avatars.avatars.create.7",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/avatars",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.avatars.create.7"
+          }
+        }
+      },
+      "response": {
+        "status": 415,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "1b94b84e-3270-4050-812e-c669fb4512ca",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "be37b2a8-6047-4bbe-b160-1efaf7602dc8",
+      "name": "Create an interactive avatar - default - interactive_avatars.avatars.create.8",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/avatars",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.avatars.create.8"
+          }
+        }
+      },
+      "response": {
+        "status": 429,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "be37b2a8-6047-4bbe-b160-1efaf7602dc8",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "3f624c66-c89d-4c26-a780-117aedd5fb97",
+      "name": "Create an interactive avatar - default - interactive_avatars.avatars.create.9",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/avatars",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.avatars.create.9"
+          }
+        }
+      },
+      "response": {
+        "status": 500,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "3f624c66-c89d-4c26-a780-117aedd5fb97",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "2ee32d4c-2f07-4d2d-befe-1791f3409701",
+      "name": "Create an interactive avatar - default - interactive_avatars.avatars.create.10",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/avatars",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.avatars.create.10"
+          }
+        }
+      },
+      "response": {
+        "status": 503,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "2ee32d4c-2f07-4d2d-befe-1791f3409701",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "a7c149d4-9ff6-410a-9803-491a4074ef1b",
+      "name": "Create an interactive avatar - default - interactive_avatars.avatars.create.11",
+      "request": {
+        "urlPathTemplate": "/api/interactive-avatars/avatars",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "interactive_avatars.avatars.create.11"
+          }
+        }
+      },
+      "response": {
+        "status": 504,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "a7c149d4-9ff6-410a-9803-491a4074ef1b",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "7a3dd0eb-d50e-4baf-a6c1-a3c1a76433a3",
+      "name": "List a localization's locales - default",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"data\": [\n    {\n      \"id\": \"id\",\n      \"status\": \"queued\",\n      \"error\": {\n        \"type\": \"type\",\n        \"title\": \"title\",\n        \"status\": 1,\n        \"code\": \"code\"\n      },\n      \"videoId\": \"videoId\",\n      \"language\": \"es-ES\",\n      \"mode\": \"dubbing\",\n      \"visibility\": \"private\",\n      \"createdAt\": \"2024-01-15T09:30:00Z\",\n      \"download\": \"download\",\n      \"thumbnail\": {\n        \"image\": null,\n        \"gif\": null\n      },\n      \"captions\": {\n        \"srt\": null,\n        \"vtt\": null\n      },\n      \"done\": true\n    }\n  ],\n  \"nextCursor\": \"nextCursor\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "7a3dd0eb-d50e-4baf-a6c1-a3c1a76433a3",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "bf5e2335-d613-4345-b079-6a96529b0889",
+      "name": "List a localization's locales - default - localizations.locales.list_.0",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.list_.0"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"data\": [\n    {\n      \"id\": \"id\",\n      \"status\": \"queued\",\n      \"error\": {\n        \"type\": \"type\",\n        \"title\": \"title\",\n        \"status\": 1,\n        \"code\": \"code\"\n      },\n      \"videoId\": \"videoId\",\n      \"language\": \"es-ES\",\n      \"mode\": \"dubbing\",\n      \"visibility\": \"private\",\n      \"createdAt\": \"2024-01-15T09:30:00Z\",\n      \"download\": \"download\",\n      \"thumbnail\": {\n        \"image\": null,\n        \"gif\": null\n      },\n      \"captions\": {\n        \"srt\": null,\n        \"vtt\": null\n      },\n      \"done\": true\n    }\n  ],\n  \"nextCursor\": \"nextCursor\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "bf5e2335-d613-4345-b079-6a96529b0889",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "6f0d85a6-ed7d-43a6-8852-ed4f06c863f1",
+      "name": "List a localization's locales - default - localizations.locales.list_.1",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.list_.1"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 400,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "6f0d85a6-ed7d-43a6-8852-ed4f06c863f1",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "f613525e-0add-4fd6-a95d-bf033ea25e7e",
+      "name": "List a localization's locales - default - localizations.locales.list_.2",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.list_.2"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 401,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "f613525e-0add-4fd6-a95d-bf033ea25e7e",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "8541bd49-e5f6-45ca-ade3-6118edb9aa2c",
+      "name": "List a localization's locales - default - localizations.locales.list_.3",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.list_.3"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 403,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "8541bd49-e5f6-45ca-ade3-6118edb9aa2c",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "4ff5876c-12cb-4845-a6f8-e95a3137b522",
+      "name": "List a localization's locales - default - localizations.locales.list_.4",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.list_.4"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 404,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "4ff5876c-12cb-4845-a6f8-e95a3137b522",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "15a2d420-dcc7-4686-ba9f-efcbe048c7ad",
+      "name": "List a localization's locales - default - localizations.locales.list_.5",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.list_.5"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 429,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "15a2d420-dcc7-4686-ba9f-efcbe048c7ad",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "4c809cae-eaff-4538-802e-bee0054007de",
+      "name": "List a localization's locales - default - localizations.locales.list_.6",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.list_.6"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 500,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "4c809cae-eaff-4538-802e-bee0054007de",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "e6c669e7-2ebf-4a15-b857-1bf5b298229a",
+      "name": "List a localization's locales - default - localizations.locales.list_.7",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.list_.7"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 503,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "e6c669e7-2ebf-4a15-b857-1bf5b298229a",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "5fd42c22-6ba9-49b8-95f7-4c292e1cfe6a",
+      "name": "List a localization's locales - default - localizations.locales.list_.8",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.list_.8"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 504,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "5fd42c22-6ba9-49b8-95f7-4c292e1cfe6a",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "24cdc7d0-a613-4db4-8677-66a32fc111af",
+      "name": "Add locales to a localization - Add locales to a localization",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "PUT",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"data\": [\n    {\n      \"id\": \"id\",\n      \"status\": \"queued\",\n      \"error\": {\n        \"type\": \"type\",\n        \"title\": \"title\",\n        \"status\": 1,\n        \"code\": \"code\"\n      },\n      \"videoId\": \"videoId\",\n      \"language\": \"es-ES\",\n      \"mode\": \"dubbing\",\n      \"visibility\": \"private\",\n      \"createdAt\": \"2024-01-15T09:30:00Z\",\n      \"download\": \"download\",\n      \"thumbnail\": {\n        \"image\": null,\n        \"gif\": null\n      },\n      \"captions\": {\n        \"srt\": null,\n        \"vtt\": null\n      },\n      \"done\": true\n    }\n  ],\n  \"nextCursor\": \"nextCursor\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "24cdc7d0-a613-4db4-8677-66a32fc111af",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "0dc052d2-b4cf-4a50-8afc-6a3683524a21",
+      "name": "Add locales to a localization - Add locales to a localization - localizations.locales.add.0",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "PUT",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.add.0"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"data\": [\n    {\n      \"id\": \"id\",\n      \"status\": \"queued\",\n      \"error\": {\n        \"type\": \"type\",\n        \"title\": \"title\",\n        \"status\": 1,\n        \"code\": \"code\"\n      },\n      \"videoId\": \"videoId\",\n      \"language\": \"es-ES\",\n      \"mode\": \"dubbing\",\n      \"visibility\": \"private\",\n      \"createdAt\": \"2024-01-15T09:30:00Z\",\n      \"download\": \"download\",\n      \"thumbnail\": {\n        \"image\": null,\n        \"gif\": null\n      },\n      \"captions\": {\n        \"srt\": null,\n        \"vtt\": null\n      },\n      \"done\": true\n    }\n  ],\n  \"nextCursor\": \"nextCursor\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "0dc052d2-b4cf-4a50-8afc-6a3683524a21",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "9d96f0f1-653b-4058-9560-b66d1f520a63",
+      "name": "Add locales to a localization - default - localizations.locales.add.1",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "PUT",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.add.1"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 400,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "9d96f0f1-653b-4058-9560-b66d1f520a63",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "007aa9dc-263e-4859-801d-0e78a98d2d49",
+      "name": "Add locales to a localization - default - localizations.locales.add.2",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "PUT",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.add.2"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 401,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "007aa9dc-263e-4859-801d-0e78a98d2d49",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "61fe253b-ef1b-4f65-815b-0d09ce4a5835",
+      "name": "Add locales to a localization - default - localizations.locales.add.3",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "PUT",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.add.3"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 402,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "61fe253b-ef1b-4f65-815b-0d09ce4a5835",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "46fdfd93-a6e0-4614-8c00-9aa8505a33ff",
+      "name": "Add locales to a localization - default - localizations.locales.add.4",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "PUT",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.add.4"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 403,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "46fdfd93-a6e0-4614-8c00-9aa8505a33ff",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "89de2e4d-5433-4a5d-ba60-7736461045e0",
+      "name": "Add locales to a localization - default - localizations.locales.add.5",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "PUT",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.add.5"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 404,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "89de2e4d-5433-4a5d-ba60-7736461045e0",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "9134590b-89a0-4421-ab11-5e3b4f02a50e",
+      "name": "Add locales to a localization - default - localizations.locales.add.6",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "PUT",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.add.6"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 409,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "9134590b-89a0-4421-ab11-5e3b4f02a50e",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "d13000d3-9a0e-4152-9bab-2be8a48c6cfb",
+      "name": "Add locales to a localization - default - localizations.locales.add.7",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "PUT",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.add.7"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 413,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "d13000d3-9a0e-4152-9bab-2be8a48c6cfb",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "96f0c239-eb45-450e-97da-df2f26349c12",
+      "name": "Add locales to a localization - default - localizations.locales.add.8",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "PUT",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.add.8"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 415,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "96f0c239-eb45-450e-97da-df2f26349c12",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "f76e79ce-3d15-43a3-bd26-d90b494c83fc",
+      "name": "Add locales to a localization - default - localizations.locales.add.9",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "PUT",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.add.9"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 429,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "f76e79ce-3d15-43a3-bd26-d90b494c83fc",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "b08d5e98-fa1e-43c2-b729-19f66f1a84da",
+      "name": "Add locales to a localization - default - localizations.locales.add.10",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "PUT",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.add.10"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 500,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "b08d5e98-fa1e-43c2-b729-19f66f1a84da",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "87a536dd-0dd3-4f5b-acc9-5a3137370f4f",
+      "name": "Add locales to a localization - default - localizations.locales.add.11",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "PUT",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.add.11"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 503,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "87a536dd-0dd3-4f5b-acc9-5a3137370f4f",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "c12cd488-2f94-41fe-9bc4-de6ba8a6e30d",
+      "name": "Add locales to a localization - default - localizations.locales.add.12",
+      "request": {
+        "urlPathTemplate": "/api/localizations/{localization_id}/locales",
+        "method": "PUT",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          },
+          "X-Test-Id": {
+            "equalTo": "localizations.locales.add.12"
+          }
+        },
+        "pathParameters": {
+          "localization_id": {
+            "equalTo": "localization_id"
+          }
+        }
+      },
+      "response": {
+        "status": 504,
+        "body": "{\n  \"type\": \"type\",\n  \"title\": \"title\",\n  \"status\": 1,\n  \"code\": \"code\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "c12cd488-2f94-41fe-9bc4-de6ba8a6e30d",
+      "persistent": true,
+      "priority": 1,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "total": 92
+  }
+}
